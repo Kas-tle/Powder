@@ -703,7 +703,7 @@ public class ConfigUtil {
 		float pitch = (float) config.getDouble(newSection + ".pitch");
 		Location location = new Location(world, x, y, z, yaw, pitch);
 
-		PowderTask powderTask = new PowderTask(config.getString(section + ".name"), 
+		PowderTask powderTask = new PowderTask(config.getString(section + ".name"),
 				powder, new StationaryTracker(location, uuid));
 
 		return powderTask;
@@ -771,7 +771,7 @@ public class ConfigUtil {
 		if (loop) powder = powder.loop();
 		powder = powder.arrowFadeout(20 * 12);
 
-		return new PowderTask("arrow-" + PowderUtil.generateID(5), powder, 
+		return new PowderTask("arrow-" + PowderUtil.generateID(5), powder,
 				new EntityTracker(projectile, creator));
 	}
 
@@ -803,7 +803,7 @@ public class ConfigUtil {
 		if (loop) powder = powder.loop();
 		powder = powder.arrowFadeout(20 * 5);
 
-		return new PowderTask("hit-" + PowderUtil.generateID(5), powder, 
+		return new PowderTask("hit-" + PowderUtil.generateID(5), powder,
 				new EntityTracker(hitEntity, creator));
 	}
 
@@ -837,7 +837,17 @@ public class ConfigUtil {
 
 	public static void loadAllAttached(Collection<UUID> uuids) {
 		FileConfiguration playerDataFile = PowderPlugin.get().getPlayerDataFile();
-
+		if (playerDataFile == null) {
+			PowderPlugin instance = PowderPlugin.get();
+			File file = new File(instance.getDataFolder(), PLAYER_DATA_FILE);
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			playerDataFile = YamlConfiguration.loadConfiguration(file);
+			instance.setPlayerDataFile(playerDataFile);
+		}
 		for (String uuid : playerDataFile.getKeys(false)) {
 			if (playerDataFile.getConfigurationSection(uuid + ".attached") == null) continue;
 			for (String entityUUID : playerDataFile.getConfigurationSection(uuid + ".attached").getKeys(false)) {

@@ -29,8 +29,8 @@
 		</repository>
 		<!-- for Towny -->
 		<repository>
-			<id>github-Towny</id>
-			<url>https://maven.pkg.github.com/TownyAdvanced/Towny/packages/</url>
+			<id>github-towny</id>
+			<url>https://maven.pkg.github.com/TownyAdvanced/Towny</url>
 		</repository>
 		<!-- for PlotSquared -->
 		<repository>
@@ -48,7 +48,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.13.2-R0.1-SNAPSHOT</version>
+			<version>1.15.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- Bundled with Minecraft -->

@@ -39,7 +39,7 @@ public class PowderPlugin extends JavaPlugin {
 	private Storage storage;
 
 	private static boolean isLoading;
-	private static boolean is1_13;
+	private static boolean is1_15;
 
 	private boolean fastMode;
 	private boolean asyncMode;
@@ -82,7 +82,7 @@ public class PowderPlugin extends JavaPlugin {
 			return;
 		}
 
-		is1_13 = Bukkit.getVersion().contains("1.13") ? true : false;
+		is1_15 = Bukkit.getVersion().contains("1.15") ? true : false;
 		config = ConfigUtil.loadConfig();
 		creationTask = new PowdersCreationTask();
 		creationTask.runTaskTimer(PowderPlugin.get(), 0L, 1L);
@@ -212,7 +212,7 @@ public class PowderPlugin extends JavaPlugin {
 				.loadConfiguration(file);
 
 		YamlConfiguration jarConfig = null;
-		try (Reader jarConfigStream = 
+		try (Reader jarConfigStream =
 				new InputStreamReader(this.getResource("locale" + File.separator + fileName), "UTF-8")) {
 			jarConfig = YamlConfiguration.loadConfiguration(jarConfigStream);
 			locale.setDefaults(jarConfig);
@@ -244,8 +244,8 @@ public class PowderPlugin extends JavaPlugin {
 		}
 	}
 
-	public static boolean is1_13() {
-		return is1_13;
+	public static boolean is1_15() {
+		return is1_15;
 	}
 
 	public void loadIntegrations() {

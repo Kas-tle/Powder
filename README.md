@@ -4,6 +4,14 @@ Powder is a Spigot plugin which utilizes particles & sound effects to allow for 
 
 Powders can be used for a fun donator perk (like SimplePets or LibsDisguises), they can be used as signs (like HolographicDisplays), or they can be used to spruce up a world/build. Powders are created in a powders.yml file, where sounds and particles can be manipulated extensively. Images can be imported to be created out of particles, Note Block Studio files can be imported to create songs, and other features can be utilized to allow for virtually any creation.
 
+This fork makes some minor changes to allow for 1.15 implementation, as well as a minor fix for handling a missing player data file.
+
+### Compiling:
+```
+git clone https://github.com/Kas-tle/Powder
+cd Powder
+mvn package
+```
 ### Some features:
 * Unlimited usage of layering/animation
 * Alter the rotation/pitch of your animation
@@ -26,5 +34,7 @@ Powder comes with a couple dozen Powders to show the possibilities of what can b
 [Spigot page](https://www.spigotmc.org/resources/powder.57227/)
 
 [Additional resources for Powder](https://github.com/Ruinscraft/powder-resources)
+
+[Original Powder Repository](https://github.com/Ruinscraft/Powder)
 
 Contributions are welcomed & appreciated!

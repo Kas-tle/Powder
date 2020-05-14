@@ -46,7 +46,7 @@ jobs:
         END_COMMIT: ${{ steps.version.outputs.tag }}
       run: git log --all --graph --oneline ${BEGIN_COMMIT}..${END_COMMIT} > release_notes.txt
     - name: Create release
-    - uses: ncipollo/release-action@v1
+      uses: ncipollo/release-action@v1
       with:
         artifacts: staging/Powder-*.jar
         bodyFile: release_notes.txt

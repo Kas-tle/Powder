@@ -1,4 +1,4 @@
-# Powder
+# Powder ![Java CI with Maven](https://github.com/Kas-tle/Powder/workflows/Java%20CI%20with%20Maven/badge.svg)
 
 Powder is a Spigot plugin which utilizes particles & sound effects to allow for incredibly customizable pictures and animations.
 
@@ -7,7 +7,7 @@ Powders can be used for a fun donator perk (like SimplePets or LibsDisguises), t
 This fork makes some minor changes to allow for 1.15 implementation, as well as a minor fix for handling a missing player data file.
 
 ### Downloading Latest Commit:
-A jar packaged version of the latest commit can be downloaded from the latest passing action on the [Actions Page](https://github.com/Kas-tle/Powder/actions).
+A jar packaged version of the latest commit can be downloaded from the latest passing action on the [Actions Page](https://github.com/Kas-tle/Powder/actions). Simply unzip the artifact.
 
 ### Compiling:
 ```

@@ -6,6 +6,9 @@ Powders can be used for a fun donator perk (like SimplePets or LibsDisguises), t
 
 This fork makes some minor changes to allow for 1.15 implementation, as well as a minor fix for handling a missing player data file.
 
+### Downloading Latest Commit:
+A jar packaged version of the latest commit can be downloaded from the latest passing action on the [Actions Page](https://github.com/Kas-tle/Powder/actions).
+
 ### Compiling:
 ```
 git clone https://github.com/Kas-tle/Powder

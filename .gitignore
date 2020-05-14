@@ -37,3 +37,13 @@ manifest.mf
 
 # delombok
 */src/main/lombok
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

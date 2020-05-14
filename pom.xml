@@ -34,8 +34,8 @@
 		</repository>
 		<!-- for PlotSquared -->
 		<repository>
-			<id>p2-repo</id>
-			<url>http://ci.athion.net/job/PlotSquared-Releases/ws/mvn/</url>
+		    <id>IntellectualSites</id>
+		    <url>https://mvn.intellectualsites.com/content/groups/public/</url>
 		</repository>
 		<repository>
 			<id>sk89q</id>
@@ -79,13 +79,11 @@
 			<version>0.95.0.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- PlotSquared (repo is weird) -->
+		<!-- PlotSquared API -->
 		<dependency>
-			<groupId>PlotSquared</groupId>
-			<artifactId>PlotSquared</artifactId>
-			<version>unknown</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/PlotSquared.jar</systemPath>
+		    <groupId>com.plotsquared</groupId>
+		    <artifactId>PlotSquared</artifactId>
+		    <version>5.1</version>
 		</dependency>
 	</dependencies>
 

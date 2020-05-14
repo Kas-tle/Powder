@@ -7,15 +7,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-import com.github.intellectualsites.plotsquared.api.PlotAPI;
-import com.github.intellectualsites.plotsquared.bukkit.events.PlayerPlotTrustedEvent;
-import com.github.intellectualsites.plotsquared.bukkit.events.PlotClearEvent;
-import com.github.intellectualsites.plotsquared.bukkit.events.PlotDeleteEvent;
-import com.github.intellectualsites.plotsquared.bukkit.events.PlotUnlinkEvent;
-import com.github.intellectualsites.plotsquared.plot.object.Location;
-import com.github.intellectualsites.plotsquared.plot.object.OfflinePlotPlayer;
-import com.github.intellectualsites.plotsquared.plot.object.Plot;
-import com.github.intellectualsites.plotsquared.plot.object.PlotPlayer;
+import com.plotsquared.core.api.PlotAPI;
+import com.plotsquared.core.events.PlayerPlotTrustedEvent;
+import com.plotsquared.core.events.PlotClearEvent;
+import com.plotsquared.core.events.PlotDeleteEvent;
+import com.plotsquared.core.events.PlotUnlinkEvent;
+import com.plotsquared.core.location.Location;
+import com.plotsquared.core.player.OfflinePlotPlayer;
+import com.plotsquared.core.plot.Plot;
+import com.plotsquared.core.player.PlotPlayer;
 import com.ruinscraft.powder.PowderPlugin;
 import com.ruinscraft.powder.model.Powder;
 import com.ruinscraft.powder.model.PowderTask;
@@ -81,7 +81,7 @@ public class PlotSquaredHandler implements Listener {
 
 	/**
 	 * Get the name of a location, e.g. "Town of Paris"
-	 * 
+	 *
 	 * Returns null if not in town
 	 * @param location
 	 * @return formatted string
@@ -120,7 +120,7 @@ public class PlotSquaredHandler implements Listener {
 	 * @return if they can place Powders in the plot
 	 */
 	public boolean hasPermissionForPowder(UUID player, org.bukkit.Location bukkitLoc) {
-		Location location = new Location(bukkitLoc.getWorld().getName(), 
+		Location location = new Location(bukkitLoc.getWorld().getName(),
 				bukkitLoc.getBlockX(), bukkitLoc.getBlockY(), bukkitLoc.getBlockZ());
 		return hasPermissionForPowder(player, location.getPlot());
 	}
@@ -172,13 +172,13 @@ public class PlotSquaredHandler implements Listener {
 		if (location.isPlotRoad()) return 0;
 		if (location.getPlot() != plot) return 0;
 		for (int i = 1; i < 5; i++) {
-			Location locOne = new Location(location.getWorld(), 
+			Location locOne = new Location(location.getWorld(),
 					location.getX() + i, location.getY(), location.getZ() + i);
-			Location locTwo = new Location(location.getWorld(), 
+			Location locTwo = new Location(location.getWorld(),
 					location.getX() + i, location.getY(), location.getZ() - i);
-			Location locThree = new Location(location.getWorld(), 
+			Location locThree = new Location(location.getWorld(),
 					location.getX() - i, location.getY(), location.getZ() + i);
-			Location locFour = new Location(location.getWorld(), 
+			Location locFour = new Location(location.getWorld(),
 					location.getX() - i, location.getY(), location.getZ() - i);
 			if (!isInPlot(plot, locOne, locTwo, locThree, locFour)) {
 				return i;

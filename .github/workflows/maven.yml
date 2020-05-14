@@ -36,7 +36,18 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn -B package --file pom.xml
     - run: mkdir staging && cp target/*.jar staging
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: Powder-Latest
-        path: staging/Powder-0.2.1.jar
+        path: staging/Powder-*.jar
+    - name: Generate release diff
+      env:
+        BEGIN_COMMIT: ${{ steps.version.outputs.previous_tag }}
+        END_COMMIT: ${{ steps.version.outputs.tag }}
+      run: git log --all --graph --oneline ${BEGIN_COMMIT}..${END_COMMIT} > release_notes.txt
+    - name: Create release
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: staging/Powder-*.jar
+        bodyFile: release_notes.txt
+        token: ${{ secrets.GITHUB_TOKEN }}

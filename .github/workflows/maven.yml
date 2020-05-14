@@ -6,6 +6,8 @@ name: Java CI with Maven
 on:
   push:
     branches: [ master ]
+    tags:
+      - release
   pull_request:
     branches: [ master ]
 
@@ -37,5 +39,5 @@ jobs:
     - run: mkdir staging && cp target/*.jar staging
     - uses: actions/upload-artifact@v1
       with:
-        name: Package
-        path: staging
+        name: Powder-Latest
+        path: staging/Powder-*.jar

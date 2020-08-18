@@ -93,7 +93,7 @@ public class PlotSquaredHandler implements Listener {
 		if (plot == null) return null;
 		if (!plot.hasOwner()) return null;
 		for (UUID owner : plot.getOwners()) {
-			OfflinePlotPlayer player = plotAPI.getUUIDWrapper().getOfflinePlayer(owner);
+			OfflinePlotPlayer player = plotAPI.wrapPlayer(owner);
 			return player.getName() + "'s plot";
 		}
 		return null;

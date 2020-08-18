@@ -126,7 +126,7 @@ public class ImageUtil {
 				}
 
 				Object data = (Void) null;
-				if (PowderPlugin.is1_15()) {
+				if (PowderPlugin.is1_16()) {
 					data = new DustOptions(
 							org.bukkit.Color.fromRGB(arr, gee, bee), 1F);
 				}

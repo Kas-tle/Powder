@@ -39,7 +39,7 @@ public class PowderPlugin extends JavaPlugin {
 	private Storage storage;
 
 	private static boolean isLoading;
-	private static boolean is1_15;
+	private static boolean is1_16;
 
 	private boolean fastMode;
 	private boolean asyncMode;
@@ -82,7 +82,7 @@ public class PowderPlugin extends JavaPlugin {
 			return;
 		}
 
-		is1_15 = Bukkit.getVersion().contains("1.15") ? true : false;
+		is1_16 = Bukkit.getVersion().contains("1.16") ? true : false;
 		config = ConfigUtil.loadConfig();
 		creationTask = new PowdersCreationTask();
 		creationTask.runTaskTimer(PowderPlugin.get(), 0L, 1L);
@@ -244,8 +244,8 @@ public class PowderPlugin extends JavaPlugin {
 		}
 	}
 
-	public static boolean is1_15() {
-		return is1_15;
+	public static boolean is1_16() {
+		return is1_16;
 	}
 
 	public void loadIntegrations() {

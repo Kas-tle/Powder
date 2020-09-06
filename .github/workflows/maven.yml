@@ -41,7 +41,7 @@ jobs:
         name: Powder-Latest
         path: staging/Powder-*.jar
     - name: Generate release diff
-      run: git log --pretty=format:"* [%s](https://github.com/olehermanse/mrpg/commit/%H)" $(git describe --tags --abbrev=0)..HEAD > release_notes.md
+      run: git log --pretty=format:"* [%s](https://github.com/olehermanse/mrpg/commit/%H)" $(git describe --tags --abbrev=0 HEAD^)..HEAD > release_notes.md
     - name: Create release
       uses: ncipollo/release-action@v1
       with:

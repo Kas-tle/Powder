@@ -47,12 +47,13 @@ jobs:
       env:
         BEGIN_COMMIT: ${{ steps.version.outputs.previous_tag }}
         END_COMMIT: ${{ steps.version.outputs.tag }}
-      run: git log --all --graph --oneline ${BEGIN_COMMIT}..${END_COMMIT} > release_notes.txt
+      run: git log --pretty=format:"* [%s](https://github.com/olehermanse/mrpg/commit/%H)" ${BEGIN_COMMIT}..${END_COMMIT} > release_notes.md
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
         artifact: staging/Powder-*.jar
         allowUpdates: true
-        bodyFile: release_notes.txt
-        draft: true
+        bodyFile: "release_notes.md"
+        draft: false
+        prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}

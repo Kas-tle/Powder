@@ -40,18 +40,12 @@ jobs:
       with:
         name: Powder-Latest
         path: staging/Powder-*.jar
-    - name: Get version information
-      id: version
-      uses: ncipollo/semantic-version-action@v1
     - name: Generate release diff
-      env:
-        BEGIN_COMMIT: ${{ steps.version.outputs.previous_tag }}
-        END_COMMIT: ${{ steps.version.outputs.tag }}
-      run: git log --pretty=format:"* [%s](https://github.com/olehermanse/mrpg/commit/%H)" ${BEGIN_COMMIT}..${END_COMMIT} > release_notes.md
+      run: git log --pretty=format:"* [%s](https://github.com/olehermanse/mrpg/commit/%H)" $(git describe --tags --abbrev=0)..HEAD > release_notes.md
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        artifact: staging/Powder-*.jar
+        artifacts: staging/Powder-*.jar
         allowUpdates: true
         bodyFile: "release_notes.md"
         draft: false

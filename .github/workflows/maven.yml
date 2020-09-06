@@ -51,6 +51,8 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: staging/Powder-*.jar
+        artifact: staging/Powder-*.jar
+        allowUpdates: true
         bodyFile: release_notes.txt
+        draft: true
         token: ${{ secrets.GITHUB_TOKEN }}

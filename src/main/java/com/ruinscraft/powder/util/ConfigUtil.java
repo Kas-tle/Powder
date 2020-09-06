@@ -43,7 +43,6 @@ public class ConfigUtil {
 		instance.reloadConfig();
 		config = instance.getConfig();
 		instance.setConfigVersion(config.getInt("configVersion", 0));
-		instance.setFastMode(config.getBoolean("fastMode", false));
 		instance.setAsyncMode(config.getBoolean("asyncMode", false));
 		instance.setMaxCreatedPowders(config.getInt("maxCreated", 100));
 		checkConfigVersion();
@@ -592,8 +591,14 @@ public class ConfigUtil {
 		} else {
 			return null;
 		}
+		// this statement runs if the playerdata file has never been created
 		if (config == null) {
-			return null;
+			try {
+				configFile.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			config = YamlConfiguration.loadConfiguration(configFile);
 		}
 		PowderPlugin.get().setPlayerDataFile(config);
 		Set<PowderTask> powderTasks = loadStationaryPowders();

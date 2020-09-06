@@ -45,8 +45,9 @@ jobs:
       uses: ncipollo/semantic-version-action@v1
     - name: Generate release diff
       env:
+        BEGIN_COMMIT: ${{ steps.version.outputs.previous_tag }}
         END_COMMIT: ${{ steps.version.outputs.tag }}
-      run: git log --pretty=format:"* [%s](https://github.com/olehermanse/mrpg/commit/%H)" $(git describe --tags --abbrev=0 $END_COMMIT^)..END_COMMIT > release_notes.md
+      run: git log --pretty=format:"* [%s](https://github.com/olehermanse/mrpg/commit/%H)" $BEGIN_COMMIT..$END_COMMIT > release_notes.md
     - name: Create release
       uses: ncipollo/release-action@v1
       with:

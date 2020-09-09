@@ -21,7 +21,7 @@ pageLength: 7
 ## If true, the console will send a list of all Powders loaded on startup/reload
 listOfLoadedPowders: true
 
-## If true, the main Powder creation task will be performed in a separate thread, resulting in an almost 100% performance increase 
+## If true, the main Powder creation task will be performed in a separate thread, resulting in an almost 100% performance increase
 ## This mode has been thoroughly tested, but due to the nature of asynchronous tasks, use at your own risk
 asyncMode: false
 
@@ -72,7 +72,7 @@ storage:
     file: powders.db
   json:
     use: false
-    file: powders.json  
+    file: powders.json
 
 ## Locale to use (from locale source folder)
 locale: 'en-us.yml'
@@ -80,3 +80,5 @@ locale: 'en-us.yml'
 ## Files/URLs to source Powder configuration files from
 powderSources:
   - 'powders.yml'
+
+## Documentation availible at https://github.com/Kas-tle/Powder/wiki/Configuration

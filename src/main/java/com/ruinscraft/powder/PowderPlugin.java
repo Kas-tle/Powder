@@ -81,7 +81,7 @@ public class PowderPlugin extends JavaPlugin {
 			return;
 		}
 
-		is1_16 = Bukkit.getVersion().contains("1.16") ? true : false;
+		is1_16 = Bukkit.getVersion().matches(".*(1\\.14|1\\.15|1\\.16).*") ? true : false;
 		config = ConfigUtil.loadConfig();
 		creationTask = new PowdersCreationTask();
 		creationTask.runTaskTimer(PowderPlugin.get(), 0L, 1L);

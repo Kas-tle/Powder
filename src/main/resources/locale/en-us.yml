@@ -42,7 +42,7 @@ ACTIVE_POWDER: '&7{powder}'
 ACTIVE_POWDER_HOVER: '&7Powder: {powder} || &aClick to cancel this Powder'
 ## {user} {command} {powder}
 ACTIVE_POWDER_CLICK: '/{command} {powder} cancel'
-## {user} 
+## {user}
 CATEGORIES_NOT_ENABLED: '&cCategories are not enabled.'
 ## {user} {command}
 CATEGORY_SYNTAX: '&c/{command} category <category> [page]'
@@ -109,7 +109,7 @@ CREATED_CLICK: '/{command} remove {name}'
 ADDTO_SYNTAX: '&c/{command} addto <name> <Powder>'
 ## {user} {name}
 ADDTO_DOES_NOT_EXIST: '&cThe active Powder ''{name}'' does not exist.'
-## {user} {powder} 
+## {user} {powder}
 ADDTO_UNKNOWN: '&cUnknown Powder ''{powder}''.'
 ## {user} {powder} {name}
 ADDTO_SUCCESS: '&7Successfully added Powder ''{powder}'' to ''{name}''.'
@@ -119,7 +119,7 @@ ADDTO_FAILURE: '&cCould not add Powder ''{powder}'' to ''{name}''.'
 REMOVEFROM_SYNTAX: '&c/{command} removefrom <name> <Powder>'
 ## {user} {name}
 REMOVEFROM_DOES_NOT_EXIST: '&cThe active Powder ''{name}'' does not exist.'
-## {user} {powder} 
+## {user} {powder}
 REMOVEFROM_UNKNOWN: '&cUnknown Powder ''{powder}''.'
 ## {user} {powder} {name}
 REMOVEFROM_SUCCESS: '&7Successfully removed Powder ''{powder}'' from ''{name}''.'
@@ -176,22 +176,20 @@ POWDER_CREATED_TIP: '&7Tip: Cancel with ''/{command} <Powder> cancel''.'
 POWDER_CREATED_WITHOUT_HOVER: '&7Powder ''{powder}'' created!'
 HELP_PREFIX: '&7Powder Help'
 HELP_POWDER: '&d/powder <Powder> &7- Use a Powder'
-HELP_POWDER_CANCEL: '&d/powder <Powder> cancel &7- Cancel a Powder'
-HELP_POWDER_STAR_CANCEL: '&d/powder * cancel &7- Cancel all Powders'
 HELP_ACTIVE: '&d/powder active &7- List or cancel active Powders'
-HELP_LIST: '&d/powder list [page] &7- List Powders by page'
+HELP_ARROW: '&d/powder arrow <hit|removehit|removetrail> [Powder] &7- Creates a trailing Powder or plays a Powder on damage'
+HELP_ATTACH: '&d/powder attach <Powder> &7- Attaches a powder to an entity in front of you'
+HELP_CANCEL: '&d/powder cancel <name> &7- Cancel a Powder'
 HELP_CATEGORIES: '&d/powder categories [page] &7- List all categories'
 HELP_CATEGORY: '&d/powder category <category> [page] &7- List all Powders in a category'
-HELP_SEARCH: '&d/powder search <term> [page] &7- Search for a Powder'
-HELP_RELOAD: '&d/powder reload &7- Reload Powder'
-HELP_NEARBY: '&d/powder nearby &7- Show nearby Powders'
-HELP_CREATE: '&d/powder create <name> <Powder> &7- Creates a named Powder at your location'
 HELP_CREATED: '&d/powder created &7- Lists the Powders you have made'
-HELP_REMOVE: '&d/powder remove <name> &7- Removes a named Powder'
-HELP_ATTACH: '&d/powder attach <Powder> &7- Attaches a powder to an entity in front of you'
-HELP_ADDTO: '&d/powder addto <name> <Powder> &7- Adds a Powder to an existing named Powder'
-HELP_REMOVEFROM: '&d/powder removefrom <name> <Powder> &7- Removes a Powder from an existing named Powder'
-HELP_CANCEL: '&d/powder cancel <name> &7- Cancels any currently active Powder with this name'
+HELP_HELP: '&d/powder help [page] &7- Lists commands for Powder'
+HELP_LIST: '&d/powder list [page] &7- List Powders by page'
+HELP_NEARBY: '&d/powder nearby|near|nearme &7- Show nearby Powders'
+HELP_RELOAD: '&d/powder reload &7- Reload Powder'
+HELP_SEARCH: '&d/powder search <term> [page] &7- Search for a Powder'
+HELP_STATION: '&d/powder station <Powder> [name] &7- Creates a named Powder at your location'
+HELP_REMOVE: '&d/powder remove <name|user> [username] &7- Removes a named Powder or a Powder from a user'
 HELP_EXTRA: '&7It''s also possible to &dclick things in /powder &7to enable or cancel Powders. Click the prefix in a message to return to the menu.'
 ## {command}
 HELP_TIP: '&7Use &c/{command} help &7for help.'

@@ -164,39 +164,44 @@ public class PowderUtil {
 	public static void helpMessage(Player player, String label, int page) {
 		PowderUtil.sendPrefixMessage(player, Message.HELP_PREFIX, label);
 		List<BaseComponent> texts = new ArrayList<>();
-		texts.add(getMessage(Message.HELP_POWDER));
-		texts.add(getMessage(Message.HELP_POWDER_CANCEL));
-		texts.add(getMessage(Message.HELP_ACTIVE));
-		texts.add(getMessage(Message.HELP_LIST));
-		if (PowderPlugin.get().getPowderHandler().categoriesEnabled()) {
-			texts.add(getMessage(Message.HELP_CATEGORIES));
-			texts.add(getMessage(Message.HELP_CATEGORY));
+		if (player.hasPermission("powder.command")) {
+			texts.add(getMessage(Message.HELP_POWDER));
 		}
-		texts.add(getMessage(Message.HELP_SEARCH));
-		if (player.hasPermission("powder.reload")) {
-			texts.add(getMessage(Message.HELP_RELOAD));
+		if (player.hasPermission("powder.command")) {
+			texts.add(getMessage(Message.HELP_ACTIVE));
 		}
-		if (player.hasPermission("powder.nearby")) {
-			texts.add(getMessage(Message.HELP_NEARBY));
-		}
-		if (player.hasPermission("powder.create")) {
-			texts.add(getMessage(Message.HELP_CREATE));
-			texts.add(getMessage(Message.HELP_CREATED));
-		}
-		if (player.hasPermission("powder.remove")) {
-			texts.add(getMessage(Message.HELP_REMOVE));
+		if (player.hasPermission("powder.arrow")) {
+			texts.add(getMessage(Message.HELP_ARROW));
 		}
 		if (player.hasPermission("powder.attach")) {
 			texts.add(getMessage(Message.HELP_ATTACH));
 		}
-		if (player.hasPermission("powder.addto")) {
-			texts.add(getMessage(Message.HELP_ADDTO));
-		}
-		if (player.hasPermission("powder.removefrom")) {
-			texts.add(getMessage(Message.HELP_REMOVEFROM));
-		}
 		if (player.hasPermission("powder.cancel")) {
 			texts.add(getMessage(Message.HELP_CANCEL));
+		}
+		if (PowderPlugin.get().getPowderHandler().categoriesEnabled()) {
+			texts.add(getMessage(Message.HELP_CATEGORIES));
+			texts.add(getMessage(Message.HELP_CATEGORY));
+		}
+		if (player.hasPermission("powder.command")) {
+			texts.add(getMessage(Message.HELP_CREATED));
+			texts.add(getMessage(Message.HELP_HELP));
+			texts.add(getMessage(Message.HELP_LIST));
+		}
+		if (player.hasPermission("powder.nearby")) {
+			texts.add(getMessage(Message.HELP_NEARBY));
+		}
+		if (player.hasPermission("powder.reload")) {
+			texts.add(getMessage(Message.HELP_RELOAD));
+		}
+		if (player.hasPermission("powder.command")) {
+			texts.add(getMessage(Message.HELP_SEARCH));
+		}
+		if (player.hasPermission("powder.station")) {
+			texts.add(getMessage(Message.HELP_STATION));
+		}
+		if (player.hasPermission("powder.remove")) {
+			texts.add(getMessage(Message.HELP_REMOVE));
 		}
 		BaseComponent comp1 = getMessage(Message.HELP_EXTRA);
 		comp1.setColor(comp1.getColor());
@@ -734,7 +739,7 @@ public class PowderUtil {
 		List<ParticleMatrix> newMatrices = new ArrayList<>();
 		switch (gradient) {
 		// diagram https://i.imgur.com/0uL5i3a.png
-		// gradient goes from specified dot to opposite location 
+		// gradient goes from specified dot to opposite location
 		// (12 to 2, 15 to 5, 4 to 9, 23 to 21, etc.)
 		case 1: {
 			// 26 25

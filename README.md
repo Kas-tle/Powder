@@ -4,7 +4,7 @@ Powder is a Spigot plugin which utilizes particles & sound effects to allow for 
 
 Powders can be used for a fun donator perk (like SimplePets or LibsDisguises), they can be used as signs (like HolographicDisplays), or they can be used to spruce up a world/build. Powders are created in a powders.yml file, where sounds and particles can be manipulated extensively. Images can be imported to be created out of particles, Note Block Studio files can be imported to create songs, and other features can be utilized to allow for virtually any creation.
 
-This fork makes some minor changes to allow for 1.16 implementation, as well as a minor fix for handling a missing player data file. Currently, it will only work properly with 1.16, but 1.14+ should work as well with a few minor changes. It has also been updated to use the PlotsSquared 5.1 API.
+This fork makes some minor changes to allow for 1.16.3 implementation, as well as a minor fix for handling a missing player data file. Currently, it will only work properly with 1.16.3, but 1.14+ should work as well with a few minor changes. It has also been updated to use the PlotsSquared 5.1 API.
 
 ### Downloading Latest Release:
 A jar packaged version of the latest release can be downloaded from the latest passing action on the [Releases Page](https://github.com/Kas-tle/Powder/releases/latest).
